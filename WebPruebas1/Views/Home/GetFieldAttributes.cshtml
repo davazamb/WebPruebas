@@ -1,0 +1,86 @@
+﻿@model WebPruebas1.Models.ConditionWitRefFieldsDropdownList
+
+@{
+    ViewBag.Title = "GetFieldAttributes";
+}
+
+<h2>GetFieldAttributes</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Condition_Details</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Field_Ref_Name)
+        </div>
+        <div class="editor-field">
+            @if (@ViewBag.projectFilterSelected)
+            {
+                @Html.DropDownListFor(model => model.Field_Ref_Name,
+                        ViewBag.projectConditionWitRefFieldsDropdownList as SelectList,
+                            string.Empty, new { @id = "ddlField", style = "font-size: .85em; font-weight: normal;" })
+            }
+            else
+            {
+                @Html.EditorFor(model => model.Field_Ref_Name)
+            }
+            @Html.ValidationMessageFor(model => model.Field_Ref_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataType)
+            @Html.ValidationMessageFor(model => model.DataType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CoreField)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.CoreField)
+            @Html.ValidationMessageFor(model => model.CoreField)
+        </div>
+
+    </fieldset>
+}
+
+
+@section Scripts{ 
+<script type="text/javascript">
+     $(function() {
+            $("#ddlField").change(function() {
+                var selectedItem = $(this).val();
+                $.ajax({
+                    cache: false,
+                    type: "GET",
+                    url: "@(Url.Action("GetFieldAttributes", "ConditionDetails"))",
+                    data: { "selectedField": selectedItem},
+                    success: function (data) {
+                        $("#DataType").val(data.aA);
+                        if (data.aB) {
+                            var chk = $('#CoreField').is(':checked');
+                            if (!(chk)) {
+                                $("#CoreField").click();
+                            }
+                        }
+                        else {
+                            var chk = $('#CoreField').is(':checked');
+                            if (chk) {
+                                $("#CoreField").click();
+                            }
+                        }
+                    },
+                    error:function (xhr, ajaxOptions, thrownError){
+                        alert('Failed to return core and type field attributes.');
+
+                    }
+                });
+            });
+        });
+</script>
+}
