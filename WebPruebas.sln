@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPruebas1", "WebPruebas1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hangfire", "hangfire\hangfire.csproj", "{020A16E8-663A-471C-8FA2-50D8402651B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserProfile", "UserProfile\UserProfile.csproj", "{F47D24A5-A208-485F-9242-5BE771205688}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{020A16E8-663A-471C-8FA2-50D8402651B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{020A16E8-663A-471C-8FA2-50D8402651B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{020A16E8-663A-471C-8FA2-50D8402651B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F47D24A5-A208-485F-9242-5BE771205688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F47D24A5-A208-485F-9242-5BE771205688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F47D24A5-A208-485F-9242-5BE771205688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F47D24A5-A208-485F-9242-5BE771205688}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
