@@ -58,6 +58,25 @@ namespace UserProfile.Models
         public string ConfirmPassword { get; set; }
     }
 
+
+    public class UserProfileEdit
+    {
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+        [Required(ErrorMessage = "El Campo {0} es requerido")]
+        [MaxLength(100, ErrorMessage = "El Campo {0} debe tener maximo {1} Caracter de longitud")]
+        [Display(Name = "Nombre")]
+        public string FirstName { get; set; }
+        [Required(ErrorMessage = "El Campo {0} es requerido")]
+        [MaxLength(100, ErrorMessage = "El Campo {0} debe tener maximo {1} Caracter de longitud")]
+        [Display(Name = "Apellido")]
+        public string LastName { get; set; }
+        [Display(Name = "UserPhoto")]
+        public byte[] UserPhoto { get; set; }
+    }
+
     public class AddPhoneNumberViewModel
     {
         [Required]

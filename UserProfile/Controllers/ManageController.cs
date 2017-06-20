@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using UserProfile.Models;
+using System.Net;
+using System.IO;
 
 namespace UserProfile.Controllers
 {
@@ -243,7 +245,7 @@ namespace UserProfile.Controllers
             AddErrors(result);
             return View(model);
         }
-
+    
         //
         // GET: /Manage/SetPassword
         public ActionResult SetPassword()
