@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    if (ViewBag.TheResult == true)
+    {
+        <div class="alert alert-warning">
+            <strong>Error!</strong> Usuario y password incorrectos.
+        </div>
+    }
+    <div class="row">
+        <div class="col-md-8">
+            <hr />
+            <div class="form-group">
+                @Html.Label("username", "Username", new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBox("username", "", new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("password", "Password", new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.Password("password", "", new { @class = "form-control" })
+                </div>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Login" class="btn btn-default" />
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+}

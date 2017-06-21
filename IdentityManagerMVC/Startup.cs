@@ -1,6 +1,8 @@
 ﻿using IdentityManager;
 using IdentityManager.AspNetIdentity;
 using IdentityManager.Configuration;
+using IdentityManager.Core.Logging;
+using IdentityManager.Logging;
 using IdentityManagerMVC.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -15,6 +17,14 @@ namespace IdentityManagerMVC
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            LogProvider.SetCurrentLogProvider(new TraceSourceLogProvider());
+
+            app.UseCookieAuthentication(new Microsoft.Owin.Security.Cookies.CookieAuthenticationOptions
+            {
+                AuthenticationType = "Cookies",
+                LoginPath = new PathString("/IdentityManager/Login")
+
+            });
 
             app.Map("/idm", idm => 
             {
@@ -29,11 +39,20 @@ namespace IdentityManagerMVC
 
 
                 idm.UseIdentityManager(new IdentityManagerOptions {
-                    Factory = factory
+                    Factory = factory,
+                    SecurityConfiguration = new HostSecurityConfiguration()
+                    {
+                        HostAuthenticationType="Cookies",
+                        NameClaimType = "name",
+                        RoleClaimType = "role",
+                        AdminRoleName = "Admin",
+                    }
                 });
             });
         }
     }
+
+
 
     public class ApplicationUserStore : UserStore<ApplicationUser>
     {
