@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserProfile", "UserProfile\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetAlertWeb", "SweetAlertWeb\SweetAlertWeb.csproj", "{AAD3ECDA-2FD3-408D-838B-8B81A97FCCE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserProfileEdit", "UserProfileEdit\UserProfileEdit.csproj", "{E888CB21-5AD9-432C-9C52-C63302034938}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityManagerMVC", "IdentityManagerMVC\IdentityManagerMVC.csproj", "{B1B156A8-4226-43E3-B9FD-213FD86BD8A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{AAD3ECDA-2FD3-408D-838B-8B81A97FCCE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAD3ECDA-2FD3-408D-838B-8B81A97FCCE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAD3ECDA-2FD3-408D-838B-8B81A97FCCE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E888CB21-5AD9-432C-9C52-C63302034938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E888CB21-5AD9-432C-9C52-C63302034938}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E888CB21-5AD9-432C-9C52-C63302034938}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E888CB21-5AD9-432C-9C52-C63302034938}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1B156A8-4226-43E3-B9FD-213FD86BD8A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1B156A8-4226-43E3-B9FD-213FD86BD8A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1B156A8-4226-43E3-B9FD-213FD86BD8A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1B156A8-4226-43E3-B9FD-213FD86BD8A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
