@@ -13,6 +13,8 @@ namespace IdentityManagerMVC.Controllers
             return View();
         }
 
+        //[Route("Default")]
+        //[Authorize(Roles = "Manager")]            
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

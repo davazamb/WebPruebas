@@ -22,7 +22,7 @@ namespace IdentityManagerMVC
             app.UseCookieAuthentication(new Microsoft.Owin.Security.Cookies.CookieAuthenticationOptions
             {
                 AuthenticationType = "Cookies",
-                LoginPath = new PathString("/IdentityManager/Login")
+                //LoginPath = new PathString("/IdentityManager/Logins")
 
             });
 
@@ -40,13 +40,13 @@ namespace IdentityManagerMVC
 
                 idm.UseIdentityManager(new IdentityManagerOptions {
                     Factory = factory,
-                    SecurityConfiguration = new HostSecurityConfiguration()
-                    {
-                        HostAuthenticationType="Cookies",
-                        NameClaimType = "name",
-                        RoleClaimType = "role",
-                        AdminRoleName = "Admin",
-                    }
+                    //SecurityConfiguration = new HostSecurityConfiguration()
+                    //{
+                    //    HostAuthenticationType="Cookies",
+                    //    NameClaimType = "name",
+                    //    RoleClaimType = "role",
+                    //    AdminRoleName = "Admin",
+                    //}
                 });
             });
         }
