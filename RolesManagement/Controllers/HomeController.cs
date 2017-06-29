@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace IdentityManagerMVC.Controllers
+namespace RolesManagement.Controllers
 {
     public class HomeController : Controller
     {
@@ -13,8 +13,6 @@ namespace IdentityManagerMVC.Controllers
             return View();
         }
 
-        //[Route("Default")]
-        [Authorize]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -28,7 +26,5 @@ namespace IdentityManagerMVC.Controllers
 
             return View();
         }
-
-
     }
 }

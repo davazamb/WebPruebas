@@ -1,8 +1,6 @@
 ﻿using IdentityManager;
 using IdentityManager.AspNetIdentity;
 using IdentityManager.Configuration;
-using IdentityManager.Core.Logging;
-using IdentityManager.Logging;
 using IdentityManagerMVC.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -17,16 +15,8 @@ namespace IdentityManagerMVC
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
-            LogProvider.SetCurrentLogProvider(new TraceSourceLogProvider());
 
-            app.UseCookieAuthentication(new Microsoft.Owin.Security.Cookies.CookieAuthenticationOptions
-            {
-                AuthenticationType = "Cookies",
-                //LoginPath = new PathString("/IdentityManager/Logins")
-
-            });
-
-            app.Map("/idm", idm => 
+            app.Map("/idm", idm =>
             {
                 var factory = new IdentityManagerServiceFactory();
                 factory.IdentityManagerService = new Registration<IIdentityManagerService, ApplicationIdentityManagerService>();
@@ -38,25 +28,17 @@ namespace IdentityManagerMVC
                 factory.Register(new Registration<ApplicationDbContext>());
 
 
-                idm.UseIdentityManager(new IdentityManagerOptions {
-                    Factory = factory,
-                    //SecurityConfiguration = new HostSecurityConfiguration()
-                    //{
-                    //    HostAuthenticationType="Cookies",
-                    //    NameClaimType = "name",
-                    //    RoleClaimType = "role",
-                    //    AdminRoleName = "Admin",
-                    //}
+                idm.UseIdentityManager(new IdentityManagerOptions
+                {
+                    Factory = factory
                 });
             });
         }
     }
 
-
-
     public class ApplicationUserStore : UserStore<ApplicationUser>
     {
-        public ApplicationUserStore(ApplicationDbContext ctx)  : base(ctx)
+        public ApplicationUserStore(ApplicationDbContext ctx) : base(ctx)
         {
 
         }
@@ -64,7 +46,7 @@ namespace IdentityManagerMVC
 
     public class ApplicationRoleStore : RoleStore<IdentityRole>
     {
-        public ApplicationRoleStore(ApplicationDbContext ctx)  : base(ctx)
+        public ApplicationRoleStore(ApplicationDbContext ctx) : base(ctx)
         {
 
         }
@@ -72,7 +54,7 @@ namespace IdentityManagerMVC
 
     public class AplicationRoleManager : RoleManager<IdentityRole>
     {
-        public  AplicationRoleManager(ApplicationRoleStore roleStore) : base(roleStore)
+        public AplicationRoleManager(ApplicationRoleStore roleStore) : base(roleStore)
         {
         }
     }
