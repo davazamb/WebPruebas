@@ -70,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 325);
+            this.ClientSize = new System.Drawing.Size(420, 191);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnMover);
             this.Controls.Add(this.btnCopiar);
