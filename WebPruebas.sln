@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPruebas1", "WebPruebas1\WebPruebas1.csproj", "{A5A14F56-25CE-42EC-8C1A-CA6EC845962E}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeeEscriTexto", "LeeEscriTexto\LeeEscriTexto.csproj", "{21CD8B41-C80C-4732-BD7B-E645BF8D1B08}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopiarMoverEliminarFile", "CopiarMoverEliminarFile\CopiarMoverEliminarFile.csproj", "{7F4E3DA8-1156-45F2-8F25-852BED56ECBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramarHorarioQuartz", "ProgramarHorarioQuartz\ProgramarHorarioQuartz.csproj", "{7147F991-0B3A-48A3-A567-0DC8ACB98AFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{7F4E3DA8-1156-45F2-8F25-852BED56ECBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F4E3DA8-1156-45F2-8F25-852BED56ECBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F4E3DA8-1156-45F2-8F25-852BED56ECBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7147F991-0B3A-48A3-A567-0DC8ACB98AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7147F991-0B3A-48A3-A567-0DC8ACB98AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7147F991-0B3A-48A3-A567-0DC8ACB98AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7147F991-0B3A-48A3-A567-0DC8ACB98AFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
